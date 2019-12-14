@@ -1,6 +1,6 @@
 <p><a target="_blank" rel="noopener noreferrer" href="https://camo.githubusercontent.com/95db0da88a729ba45efa1a2ed71350eb69896c4e/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f762f76322d646174657069636b65722e737667"><img src="https://camo.githubusercontent.com/95db0da88a729ba45efa1a2ed71350eb69896c4e/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f762f76322d646174657069636b65722e737667" alt="npm-version" data-canonical-src="https://img.shields.io/npm/v/v2-datepicker.svg" style="max-width:100%;"></a> <a target="_blank" rel="noopener noreferrer" href="https://camo.githubusercontent.com/28479a7a834310a667f36760a27283f7389e864a/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f6c2f76322d646174657069636b65722e737667"><img src="https://camo.githubusercontent.com/28479a7a834310a667f36760a27283f7389e864a/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f6c2f76322d646174657069636b65722e737667" alt="license" data-canonical-src="https://img.shields.io/npm/l/v2-datepicker.svg" style="max-width:100%;"></a></p>
 
-<p>English | <a href="/chuxiaoguo/vue-sketch-ruler/blob/master/README.zh-CN.md">简体中文</a></p>
+<p>English | <a href="https://github.com/chuxiaoguo/vue-sketch-ruler/blob/master/README.zh-CN.md">简体中文</a></p>
 
 ## vue-sketch-ruler
 
