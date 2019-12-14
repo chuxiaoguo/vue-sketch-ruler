@@ -38,9 +38,14 @@
         "ruler",
         "javascript",
         "sketch-ruler",
-        "vue-ruler"
+        "vue-ruler",
+        "vue-sketch-ruler"
     ],
-    "author": "chuxiaoguo",
+    "repository": {
+      "type": "git",
+      "url": "https://github.com/chuxiaoguo/vue-sketch-ruler"
+    },
+    "author": "chuxiaoguo <408755140@qq.com>",
     "license": "MIT",
     "files": [
         "dist/*",
