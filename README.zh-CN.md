@@ -1,34 +1,35 @@
 <p><a target="_blank" rel="noopener noreferrer" href="https://camo.githubusercontent.com/95db0da88a729ba45efa1a2ed71350eb69896c4e/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f762f76322d646174657069636b65722e737667"><img src="https://camo.githubusercontent.com/95db0da88a729ba45efa1a2ed71350eb69896c4e/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f762f76322d646174657069636b65722e737667" alt="npm-version" data-canonical-src="https://img.shields.io/npm/v/v2-datepicker.svg" style="max-width:100%;"></a> <a target="_blank" rel="noopener noreferrer" href="https://camo.githubusercontent.com/28479a7a834310a667f36760a27283f7389e864a/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f6c2f76322d646174657069636b65722e737667"><img src="https://camo.githubusercontent.com/28479a7a834310a667f36760a27283f7389e864a/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f6c2f76322d646174657069636b65722e737667" alt="license" data-canonical-src="https://img.shields.io/npm/l/v2-datepicker.svg" style="max-width:100%;"></a></p>
 
-<p>English | <a href="/chuxiaoguo/vue-sketch-ruler/blob/master/README.zh-CN.md">简体中文</a></p>
+<p>English<a href="/chuxiaoguo/vue-sketch-ruler/blob/master/README.md"> | 简体中文</a></p>
 
 ## vue-sketch-ruler
 
-> A sketch like ruler in vue
+> 一个vue组件的素描标尺
 
-## Live Demo
-[click here](https://chuxiaoguo.github.io/vue-sketch-ruler/)
+## 在线demo
+[点击这里查看](https://chuxiaoguo.github.io/vue-sketch-ruler/)
 
-## Install
+## 安装
+> 支持全局导入和模块导入
 ```
 npm install --save vue-sketch-ruler
 ```
-## Supported features
-- [x] ruler render
-- [x] ruler render when scale
-- [x] ruler render when srolling
-- [x] switch status of ruler(show or hide)
-- [x] reference line management
-- [x] switch status of reference line (show or hide)
+## 支持的功能
+- [x] 标尺渲染
+- [x] 缩放内容，重绘标尺
+- [x] 滚动内容，重绘标尺
+- [x] 切换标尺状态，显示或隐藏
+- [x] 参考线管理（增加删除）
+- [x] 切换参考线状态，显示或隐藏
 
-## Upcoming features
+## 未来支持的功能
 
-- [] contextmenu of ruler
-- [] add event on corner
-- [] separate css style
-- [] international
+- [] 支持标尺的右键菜单
+- [] 标角支持事件
+- [] 分离css样式，支持导入样式
+- [] 国际化
 
-## Usage
+## 使用
 ```
 <template>
     <SketchRule
@@ -74,10 +75,10 @@ export default Vue.extend({
 });
 </script>
 ```
-A complete example can be found [here](https://github.com/chuxiaoguo/vue-sketch-ruler/blob/master/docs/src/components/UserRuler.vue)
+参考一个完整的例子，[点击这里](https://github.com/chuxiaoguo/vue-sketch-ruler/blob/master/docs/src/components/UserRuler.vue)
 
 ## api
-### Interface <TypeScript>
+### 接口 <TypeScript>
 ```
 interface Lines {
     h: number[],
@@ -100,31 +101,28 @@ interface Palette {
     cornerActiveColor: string,
 }
 ```
-### Attributes
-|  Attributes|  Description | Type | Default |
+### 属性
+
+|  属性名称|  描述 | 类型 | 默认值 |
 | --- | --- | --- | --- |
-| lang | init language lang | String | zh-CN |
-| scale | ruler scale size | Number | 2 |
-| thick | thick size | Number | 16 |
-| width | the window width of the currently loaded ruler  | Number | - |
-| height | the window height of the currently loaded ruler  | Number | - |
-| startX | x at the beginning of the ruler | Number | 0 |
-| startY | y at the beginning of the ruler | Number | 0 |
-| shadow |  size and the start coordinates on the ruler of the shadow  | Shadow | 0 |
-| startY | y at the beginning of the ruler | Number | {x: 200,y: 100,width: 200,height: 400} |
-| horLineArr | Initial values for horizontal reference lines | Array<number> | [] |
-| verLineArr | Initial values for vertical reference lines  | Array<number> | [] |
-| palette | the palette of sketch ruler | Palette | {bgColor: 'rgba(225,225,225, 0)',longfgColor: '#BABBBC',shortfgColor: '#C8CDD0',fontColor: '#7D8694', shadowColor: '#E8E8E8',lineColor: '#EB5648', borderColor: '#DADADC',cornerActiveColor: 'rgb(235, 86, 72, 0.6)',} |
+| lang | 初始化的语言 | String | zh-CN |
+| scale | 初始化标尺的缩放 | Number | 2 |
+| thick | 标尺的厚度 | Number | 16 |
+| width | 放置标尺窗口的宽度  | Number | - |
+| height | 放置标尺窗口的高度  | Number | - |
+| startX | x轴标尺开始的坐标数值 | Number | 0 |
+| startY | y轴标尺开始的坐标数值 | Number | 0 |
+| shadow |  阴影的参数  | Shadow | 0 |
+| horLineArr | 初始化水平标尺上的参考线 | Array<number> | [] |
+| verLineArr | 初始化垂直标尺上的参考线  | Array<number> | [] |
+| palette | 标尺的样式配置参数 | Palette | {bgColor: 'rgba(225,225,225, 0)',longfgColor: '#BABBBC',shortfgColor: '#C8CDD0',fontColor: '#7D8694', shadowColor: '#E8E8E8',lineColor: '#EB5648', borderColor: '#DADADC',cornerActiveColor: 'rgb(235, 86, 72, 0.6)',} |
 
 
 ### Event
 
-| EventName | Description | CallbackParam |
+| 事件名称 | 描述 | 回调参数 |
 | --- | --- | --- |
-| handleLine | horizontal or vertical reference lines has changed (add or remove) | Lines  |
+| handleLine | 在横纵标尺上操作参考线（新增或移除） | Lines  |
 
-## License
-MIT
-
-## reference
-a react component [mb-sketch-ruler](https://github.com/mockingbot/mb-sketch-ruler) from mockingbot.
+## 引用
+一个来自墨刀的react标尺组件 [mb-sketch-ruler](https://github.com/mockingbot/mb-sketch-ruler) .
