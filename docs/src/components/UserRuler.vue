@@ -1,11 +1,11 @@
 <template>
-    <div class="wrapper">
+    <div class="wrapper" id="wrapper">
         <SketchRule
             :lang="lang"
             :thick="thick"
             :scale="scale"
-            :width="582"
-            :height="482"
+            :width="width"
+            :height="height"
             :startX="startX"
             :startY="startY"
             :shadow="shadow"
@@ -31,12 +31,12 @@
 <script>
 import Vue from 'vue';
 import SketchRule from "vue-sketch-ruler";
-const rectWidth = 160;
-const rectHeight = 200;
+const rectWidth = 960;
+const rectHeight = 720;
 export default Vue.extend({
     data() {
         return {
-            scale: 2, //658813476562495, //1,
+            scale: 1, //658813476562495, //1,
             startX: 0,
             startY: 0,
             lines: {
@@ -44,6 +44,8 @@ export default Vue.extend({
                 v: [100, 200]
             },
             thick: 20,
+            width: 500,
+            height: 400,
             lang: "zh-CN", // 中英文
             isShowRuler: true, // 显示标尺
             isShowReferLine: true // 显示参考线
@@ -63,9 +65,9 @@ export default Vue.extend({
         },
         canvasStyle() {
             return {
-                width: rectWidth,
-                height: rectHeight,
-                transform: `scale(${this.scale})` 
+                width: rectWidth + 'px',
+                height: rectHeight + 'px',
+                transform: `scale(${this.scale})`
             }
         }
     },
@@ -87,9 +89,9 @@ export default Vue.extend({
             // 标尺开始的刻度
             const startX = (screensRect.left + this.thick - canvasRect.left) / this.scale;
             const startY = (screensRect.top + this.thick - canvasRect.top) / this.scale;
-            
-            this.startX = startX;
-            this.startY = startY;
+
+            this.startX = startX >> 0;
+            this.startY = startY >> 0;
         },
         // 控制缩放值
         handleWheel(e) {
@@ -104,11 +106,22 @@ export default Vue.extend({
                 this.handleScroll();
             });
         },
+        initSize() {
+            const wrapperRect = document
+                .querySelector("#wrapper")
+                .getBoundingClientRect();
+            const borderWidth = 1;
+            this.width = wrapperRect.width - this.thick - borderWidth;
+            this.height = wrapperRect.height - this.thick - borderWidth;
+        }
     },
     mounted() {
         // 滚动居中
         this.$refs.screensRef.scrollLeft =
         this.$refs.containerRef.getBoundingClientRect().width / 2 - 300; // 300 = #screens.width / 2
+        this.$nextTick(() => {
+            this.initSize();
+        });
     }
 });
 </script>
@@ -128,8 +141,8 @@ body * {
   position: absolute;
   top: 100px;
   left: 100px;
-  width: 600px;
-  height: 500px;
+  width: 900px;
+  height: 700px;
   border: 1px solid #DADADC; }
 
 #screens {
