@@ -7,7 +7,7 @@
 > 一个vue组件的素描标尺
 
 ## 在线demo
-[点击这里查看](https://chuxiaoguo.github.io/vue-sketch-ruler/)
+[点击这里查看](https://chuxiaoguo.gitee.io/vue-sketch-ruler/)
 
 ## 安装
 > 支持全局导入和模块导入
