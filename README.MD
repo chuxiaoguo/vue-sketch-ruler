@@ -8,6 +8,7 @@
 
 ## Live Demo
 [click here](https://chuxiaoguo.github.io/vue-sketch-ruler/)
+[国内站点](https://chuxiaoguo.gitee.io/vue-sketch-ruler/)
 
 ## Install
 ```
